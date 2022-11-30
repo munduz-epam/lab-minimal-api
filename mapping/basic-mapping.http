@@ -1,0 +1,17 @@
+###
+GET {{baseUrl}}/
+
+###
+POST {{baseUrl}}/path
+
+###
+OPTIONS {{baseUrl}}/options-or-head
+
+###
+GET {{baseUrl}}/posts/wildcard-rest
+
+###
+GET {{baseUrl}}/todos/1/home/abc
+
+###
+GET {{baseUrl}}/structured

@@ -1,0 +1,8 @@
+###
+GET {{baseUrl}}/v1/info
+
+###
+GET {{baseUrl}}/v1/person/13/child/Murat
+
+###
+GET {{baseUrl}}/v1/person/12/link

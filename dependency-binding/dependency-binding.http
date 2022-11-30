@@ -1,0 +1,18 @@
+###
+GET {{baseUrl}}/greet/Azamat
+
+###
+GET {{baseUrl}}/greet/param/Adilet
+
+###
+GET {{baseUrl}}/built-in
+X-TEST-INPUT: epam lab
+Content-Type: text/plain
+
+Plain text
+
+###
+GET {{baseUrl}}/point?point=2.3,5.7
+
+###
+GET {{baseUrl}}/page?page-offset=200&page-size=20

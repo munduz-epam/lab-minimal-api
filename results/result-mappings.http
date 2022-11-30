@@ -1,0 +1,11 @@
+###
+GET {{baseUrl}}/result/person
+
+###
+GET {{baseUrl}}/result/person/permit/180
+
+###
+GET {{baseUrl}}/result/html
+
+###
+GET {{baseUrl}}/result/kgz-info
