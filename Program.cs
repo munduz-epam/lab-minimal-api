@@ -23,5 +23,6 @@ app.MapBasic();
 app.MapDependenciesAndBindings();
 app.MapRouteGroups();
 app.MapResultExamples();
+app.MapFilterMiddleware();
 
 app.Run();

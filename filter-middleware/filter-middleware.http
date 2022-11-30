@@ -1,0 +1,5 @@
+###
+GET {{baseUrl}}/color-selector/blue
+
+###
+GET {{baseUrl}}/color-selector/red
