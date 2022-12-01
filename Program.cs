@@ -11,8 +11,9 @@ builder.Services.AddDependencies();
 var app = builder.Build();
 
 var portEnvVar = Environment.GetEnvironmentVariable("EPAM_LAB_PORT");
-if (!int.TryParse(portEnvVar, CultureInfo.InvariantCulture, out var port))
+if (!int.TryParse(portEnvVar, CultureInfo.InvariantCulture, out var port)) {
     port = 3000;
+}
 
 app.Urls.Add($"http://+:{port}");
 

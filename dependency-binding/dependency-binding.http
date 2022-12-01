@@ -5,6 +5,15 @@ GET {{baseUrl}}/greet/Azamat
 GET {{baseUrl}}/greet/param/Adilet
 
 ###
+POST {{baseUrl}}/body-map
+Content-Type: application/json
+
+{
+    "x": 10.45,
+    "y": 7.89
+}
+
+###
 GET {{baseUrl}}/built-in
 X-TEST-INPUT: epam lab
 Content-Type: text/plain

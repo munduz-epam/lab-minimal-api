@@ -31,7 +31,13 @@ internal static class DependencyAndBindingExtensions
             }
         );
 
+        // Json from body
+        app.MapPost(
+            "/body-map",
+            ([FromBody] Point point) => $"point coordinates: {point.X}, {point.Y}"
+        );
 
+        // Built in classes and reading from stream
         app.MapGet(
             "built-in",
             async (
@@ -44,16 +50,18 @@ internal static class DependencyAndBindingExtensions
                 response.Headers.Add("X-TEST", new[] { "one", "two" });
                 using var streamReader = new StreamReader(body);
                 var text = await streamReader.ReadToEndAsync();
+
                 return $"input body: {text}, header: {header}";
             }
         );
 
-        // Parameter binding
+        // Parameter binding with static TryParse / string
         app.MapGet(
             "/point",
             (Point? point) => point is {} ? $"point coordinates: {point.X}, {point.Y}" : "point not provided"
         );
 
+        // Parameter binding with static BindAsync / httpContext
         app.MapGet(
             "/page",
             (Paging page) => $"page offset: {page.Offset}, size: {page.Size}"
