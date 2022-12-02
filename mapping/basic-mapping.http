@@ -1,17 +1,20 @@
-###
+### root mapping
 GET {{baseUrl}}/
 
-###
+### post with path
 POST {{baseUrl}}/path
 
-###
+### plain old MVC
+GET {{baseUrl}}/api/test
+
+### different verbs
 OPTIONS {{baseUrl}}/options-or-head
 
-###
+### wildcard to catch all routes
 GET {{baseUrl}}/posts/wildcard-rest
 
-###
+### route constraints are similar to MVC
 GET {{baseUrl}}/todos/1/home/abc
 
-###
+### objects are returned as json
 GET {{baseUrl}}/structured

@@ -1,10 +1,10 @@
-###
+### di from services
 GET {{baseUrl}}/greet/Azamat
 
-###
+### di from services and params
 GET {{baseUrl}}/greet/param/Adilet
 
-###
+### map json body as in MVC
 POST {{baseUrl}}/body-map
 Content-Type: application/json
 
@@ -13,15 +13,15 @@ Content-Type: application/json
     "y": 7.89
 }
 
-###
+### built classes are mapped automagically
 GET {{baseUrl}}/built-in
 X-TEST-INPUT: epam lab
 Content-Type: text/plain
 
 Plain text
 
-###
+### parameter binding with static TryParse / string
 GET {{baseUrl}}/point?point=2.3,5.7
 
-###
+### parameter binding with static BindAsync / httpContext
 GET {{baseUrl}}/page?page-offset=200&page-size=20

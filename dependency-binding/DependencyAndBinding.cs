@@ -13,6 +13,7 @@ internal static class DependencyAndBindingExtensions
 
     internal static WebApplication MapDependenciesAndBindings(this WebApplication app)
     {
+        // di from services
         app.MapGet(
             "/greet/{name}",
             (
@@ -20,6 +21,7 @@ internal static class DependencyAndBindingExtensions
             ) => greeter.Hi(name)
         );
 
+        // di from services and params
         app.MapGet(
             "/greet/param/{name}",
             (
@@ -31,13 +33,13 @@ internal static class DependencyAndBindingExtensions
             }
         );
 
-        // Json from body
+        // json from body
         app.MapPost(
             "/body-map",
             ([FromBody] Point point) => $"point coordinates: {point.X}, {point.Y}"
         );
 
-        // Built in classes and reading from stream
+        // built in classes and reading from stream
         app.MapGet(
             "built-in",
             async (
@@ -48,6 +50,7 @@ internal static class DependencyAndBindingExtensions
             {
                 var header = request.Headers["X-TEST-INPUT"];
                 response.Headers.Add("X-TEST", new[] { "one", "two" });
+                
                 using var streamReader = new StreamReader(body);
                 var text = await streamReader.ReadToEndAsync();
 
@@ -55,13 +58,13 @@ internal static class DependencyAndBindingExtensions
             }
         );
 
-        // Parameter binding with static TryParse / string
+        // parameter binding with static TryParse / string
         app.MapGet(
             "/point",
             (Point? point) => point is {} ? $"point coordinates: {point.X}, {point.Y}" : "point not provided"
         );
 
-        // Parameter binding with static BindAsync / httpContext
+        // parameter binding with static BindAsync / httpContext
         app.MapGet(
             "/page",
             (Paging page) => $"page offset: {page.Offset}, size: {page.Size}"

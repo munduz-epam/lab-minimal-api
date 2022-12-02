@@ -1,6 +1,4 @@
 using System.Reflection;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Metadata;
 
 interface Greeter
 {
@@ -9,13 +7,18 @@ interface Greeter
 
 class CoolGreeter : Greeter
 {
-    public string Hi(string name) => $"Hi {name}";
+    public string Hi(string name) => $"Hi! {name}";
 }
 
 class GreetRequest
 {
-    public Greeter? Greeter { get; set; }
-    public string? Name { get; set; }
+    public GreetRequest(Greeter greeter, string name)
+    {
+        Greeter = greeter;
+        Name = name;
+    }
+    public Greeter Greeter { get; private set; }
+    public string Name { get; private set; }
 }
 
 record Point(double X, double Y)

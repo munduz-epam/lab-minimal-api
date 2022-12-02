@@ -7,6 +7,8 @@ internal static class BasiMappingExtensions
         app.MapGet("/", () => "GET");
         app.MapPost("/path", () => "Path POST");
 
+        app.MapControllers();
+
         app.MapMethods(
             "/options-or-head",
              new[] { "OPTIONS", "HEAD" },

@@ -23,8 +23,9 @@ internal static class FilterMiddlewareExtensions
         app.Use((context, next) =>
         {
             var result = next(context);
+            var method = context.Request.Method;
             var path = context.Request.Path;
-            app.Logger.LogInformation("Request for path: {Path} finished", path);
+            app.Logger.LogInformation("Request: {Method} {Path} finished", method, path);
             return result;
         });
 
