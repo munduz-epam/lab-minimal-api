@@ -1,5 +1,5 @@
-###
+### invokes normal request, log filter works
 GET {{baseUrl}}/color-selector/blue
 
-###
+### returns 500 on red
 GET {{baseUrl}}/color-selector/red

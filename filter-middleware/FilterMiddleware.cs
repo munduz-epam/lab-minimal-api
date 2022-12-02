@@ -20,6 +20,7 @@ internal static class FilterMiddlewareExtensions
             })
             .AddEndpointFilter<LogFilter>();
 
+        // plain old middleware
         app.Use((context, next) =>
         {
             var result = next(context);

@@ -4,5 +4,5 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class TestController : Controller {
     [HttpGet]
-    public string Index() => "from controller";
+    public IActionResult Index() => Content("from controller");
 }

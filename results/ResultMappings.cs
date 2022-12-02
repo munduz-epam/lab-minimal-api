@@ -8,10 +8,13 @@ internal static class ResultMappings
     {
         var resultGroup = app.MapGroup("/result");
 
+        // infers the type and adds schema to openapi
         resultGroup.MapGet("person-json", () => new Person("Александр", 23));
 
+        // no schema on openapi
         resultGroup.MapGet("person-not-typed", () => Results.Ok(new Person("Ulan", 18)));
 
+        // openapi schema for type is added
         resultGroup.MapGet("person-typed", () => TypedResults.Ok(new Person("Oleg", 20)));
 
         // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/responses?view=aspnetcore-7.0#built-in-results
@@ -29,6 +32,7 @@ internal static class ResultMappings
         // result as an object
         resultGroup.MapGet("html", () => new HtmlResult("<h1>HTML returned</h1>"));
 
+        // stream result
         resultGroup.MapGet("kgz-info", async () => 
         {
             var proxyClient = new HttpClient();
