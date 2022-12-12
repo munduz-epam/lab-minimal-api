@@ -56,7 +56,7 @@ record Paging(long Offset, int Size) {
         size = size == 0 ? 1 : size;
         
         long.TryParse(offsetStr, CultureInfo.InvariantCulture, out var offset);
-        offset = offset == 0 ? 1 : offset;
+        offset = offset == 0 ? 0 : offset;
 
         return ValueTask.FromResult(new Paging(offset, size));
     }

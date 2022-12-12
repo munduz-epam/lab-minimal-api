@@ -1,8 +1,11 @@
 ###
-GET {{baseUrl}}/result/person
+GET {{baseUrl}}/result/person-json
 
 ###
-GET {{baseUrl}}/result/person/permit/180
+GET {{baseUrl}}/result/person-not-typed
+
+###
+GET {{baseUrl}}/result/person/permit/12
 
 ###
 GET {{baseUrl}}/result/html

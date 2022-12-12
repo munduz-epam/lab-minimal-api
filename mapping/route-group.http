@@ -1,6 +1,9 @@
 ### basic route group
 GET {{baseUrl}}/v1/info
 
+### basic route group
+GET {{baseUrl}}/v2/info
+
 ### route group with route parameters
 GET {{baseUrl}}/v1/person/13/child/Murat
 
